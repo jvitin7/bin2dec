@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/assets/animation.css">
-    <title>Conversor Binário e Decimal</title>
+    <script src="./js/index.js" defer type="module"></script>
+    <title>Bin2Dec</title>
 </head>
 <body>
     
@@ -16,17 +17,18 @@
 
             <h1>Conversor Binário para Decimal</h1>
 
-            <form action="" class="content">
+            <main class="content">
 
-                <input type="text" name="" id="" class="input" placeholder="Binário">
-                <input type="text" class="input" disabled>
+                <input type="text" name="binary" id="value" class="input" data-value="binary" placeholder="Binário">
+                <span id="error"></span>
+                <input type="text" name="decimal" id="result" class="input" data-value="decimal" disabled>
 
                 <div class="group-btn">
-                    <button class="convert">CONVERTER</button>
-                    <button class="exchange">TROCAR</button>
+                    <button class="convert" id="convert">CONVERTER</button>
+                    <button class="exchange" id="exchange">TROCAR</button>
                 </div>
 
-            </form>
+            </main>
 
         </div>
 
