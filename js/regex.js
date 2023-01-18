@@ -1,12 +1,12 @@
 export function validateBinary(binary) {
-    if(!binary.match(/[0-1]/)) {
-        const error = new Error('Valor invalido');
+    if(!binary.match(/^[01]+$/g)) {
+        const error = new Error('Binário invalido');
         throw error;
     }
 }
 
 export function validateDecimal(decimal) {
-    if(!decimal.match(/[0-9]/)) {
+    if(!decimal.match(/^[0-9]+$/g)) {
         const error = new Error('Decimal inválido');
         throw error;
     }

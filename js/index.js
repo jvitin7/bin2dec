@@ -8,15 +8,31 @@ const result = document.getElementById('result');
 const convert = document.getElementById('convert');
 const trade = document.getElementById('exchange');
 
-value.focus();
+input.focus();
 
 convert.addEventListener('click', () => {
+    input.classList.remove('error');
+    document.getElementById('error').textContent = '';
     
     if(input.dataset.value === 'binary') {
-        result.value = `= ${binToDec(input.value)} dec`;
+
+        try {
+            validateBinary(input.value);
+            result.value = `= ${binToDec(input.value)} dec`;
+        } catch (error) {
+            input.classList.add('error');
+            document.getElementById('error').textContent = error.message;
+        }
+
     } else {
-        const resultNumber = Number(input.value);
-        result.value = `= ${decToBin(resultNumber)} bin`;
+
+        try {
+            validateDecimal(input.value);
+            result.value = `= ${decToBin(input.value)} bin`;
+        } catch (error) {
+            input.classList.add('error');
+            document.getElementById('error').textContent = error.message;
+        }
     }
 
 })

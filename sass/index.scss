@@ -29,9 +29,10 @@ section {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: $dark-color;
-    border-radius: 8px;
-    box-shadow:  24px 24px 63px #0a0a0a, -24px -24px 63px #282828;
+    border-radius: 32px;
+    background: linear-gradient(145deg, #171717, #1b1b1b);
+    box-shadow:  20px 20px 28px #141414,
+                -20px -20px 28px #1e1e1e;
     padding: 32px;
     font-family: $font-family;
 
