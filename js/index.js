@@ -20,6 +20,7 @@ convert.addEventListener('click', () => {
             validateBinary(input.value);
             result.value = `= ${binToDec(input.value)} dec`;
         } catch (error) {
+            result.value = '';
             input.classList.add('error');
             document.getElementById('error').textContent = error.message;
         }
@@ -30,6 +31,7 @@ convert.addEventListener('click', () => {
             validateDecimal(input.value);
             result.value = `= ${decToBin(input.value)} bin`;
         } catch (error) {
+            result.value = '';
             input.classList.add('error');
             document.getElementById('error').textContent = error.message;
         }
