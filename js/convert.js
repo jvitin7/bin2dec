@@ -5,7 +5,7 @@ export function binToDec(number) {
 }
 
 export function decToBin(number) {
-    const bin = Number(number.toString(2));
+    const bin = number.toString(2);
     
     return bin;
 }

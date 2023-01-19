@@ -1,14 +1,13 @@
+import { resetStyles } from "./index.js";
+
 const title = document.getElementById('title');
 const input = document.getElementById('value');
-const result = document.getElementById('result');
-const error = document.getElementById('error');
+// const result = document.getElementById('result');
+// const error = document.getElementById('error');
 
 export function exchange() {
-    input.value = '';
-    result.value = '';
-    input.classList.remove('error');
-    error.textContent = '';
 
+    resetStyles();
 
     if(input.dataset.value === 'binary') {
 
@@ -17,7 +16,6 @@ export function exchange() {
         input.placeholder = 'Decimal';
         document.title = 'Dec2Bin';
 
-        input.focus();
     } else {
 
         title.textContent = 'Conversor Binário para Decimal';
@@ -25,7 +23,8 @@ export function exchange() {
         input.placeholder = 'Binário';
         document.title = 'Bin2Dec';
 
-        input.focus();
     }
+
+    input.focus();
     
 }

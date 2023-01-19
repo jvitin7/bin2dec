@@ -1,4 +1,5 @@
-import { binToDec, decToBin } from "./convert.js";
+import { binToDec } from "./convert.js";
+import { decToBin } from "./convert.js";
 import { exchange } from "./exchange.js";
 import { validateBinary, validateDecimal } from "./regex.js";
 
@@ -7,6 +8,15 @@ const result = document.getElementById('result');
 
 const convert = document.getElementById('convert');
 const trade = document.getElementById('exchange');
+
+const error = document.getElementById('error');
+
+export function resetStyles() {
+    input.value = '';
+    result.value = '';
+    input.classList.remove('error');
+    error.textContent = '';
+}
 
 input.focus();
 
@@ -20,7 +30,6 @@ convert.addEventListener('click', () => {
             validateBinary(input.value);
             result.value = `= ${binToDec(input.value)} dec`;
         } catch (error) {
-            result.value = '';
             input.classList.add('error');
             document.getElementById('error').textContent = error.message;
         }
@@ -29,9 +38,9 @@ convert.addEventListener('click', () => {
 
         try {
             validateDecimal(input.value);
-            result.value = `= ${decToBin(input.value)} bin`;
+            const number = Number(input.value);
+            result.value = `= ${decToBin(number)} bin`;
         } catch (error) {
-            result.value = '';
             input.classList.add('error');
             document.getElementById('error').textContent = error.message;
         }
